@@ -34,7 +34,7 @@ export function AnimatedCounter({
 
     const controls = animate(0, target, {
       duration,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
       onUpdate(value) {
         if (decimals > 0) {
           setDisplayValue(value.toFixed(decimals));

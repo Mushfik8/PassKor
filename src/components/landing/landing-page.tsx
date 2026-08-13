@@ -37,7 +37,7 @@ const fadeInUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
 };
 
 const stagger = {
@@ -51,7 +51,7 @@ const staggerChild = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+  transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const },
 };
 
 export function LandingPage() {
@@ -158,7 +158,7 @@ function HeroSection({ t }: { t: ReturnType<typeof useTranslations> }) {
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const }}
           className="relative mx-auto max-w-5xl"
         >
           <div className="relative rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-2xl overflow-hidden">
